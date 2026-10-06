@@ -1,38 +1,7 @@
-# 项目协作
+# Project workflow
 
-- 当前源码在 `Smart Video Viewer/`，设计稿和确认的图标母版在 `design/`。
-- 用 Git 提交记录变更和回退；除非用户明确要求，不额外复制本地备份。已有原件和备份不得擅自删除。
-- 构建产物、发布包、个人 Xcode 配置、证书和凭据不得提交到源码仓库；发布附件单独检查。
-
-# 设计与图标
-
-- 先出稿的任务必须等用户选定后再替换；忠实实现确认稿，不凭默认审美追加调整。
-- 同时检查几何与光学居中、视觉重量和留白；播放三角形没有固定的偏移方向或数值。
-- 图标从固定尺寸、确认绘制完成的母版导出，再缩放到各尺寸。连续改变浏览器视口截图曾造成小尺寸 PNG 重复、截断，禁止未经核验沿用该方式。
-- 逐一查看最终 PNG 的实际尺寸与放大效果、透明度及浅深背景，再核对安装资源和真实 Safari 工具栏。SVG 正确、大图正常或文件一致，均不能代替小图视觉验证。
-- 图标母版与导出说明见 `design/focus-optical-2026-10-06/approved-raster/README.md`。
-
-# Git 与 GitHub
-
-- GitHub 连接、本机 `gh` 登录、Git 作者信息和远程仓库是不同配置。遇到缺失先检查已有连接，不直接让用户重填身份；优先使用已核实账户的 GitHub noreply 邮箱，仅配置本项目。
-- 本地提交不等于上传完成；推送后核对远程提交。未经授权不公开仓库或默认添加开源许可证。
-- 上传 `.github/workflows/` 可能需要 OAuth 的 `workflow` 权限；修改 CI 的运行时读写权限不能解决上传授权不足。扩大认证权限需获得用户授权，不绕过限制。
-- CI 配置上传成功不等于检查通过；核对对应提交的运行结果。无法启用时明确标为模板或待启用，不写“已通过”。
-
-# 隐私检查
-
-- 公开前检查当前文件、全部待公开历史、作者元数据、图片元数据、CI 日志和 Release 附件；不能只查令牌或只查最新源码。
-- 不公开个人姓名注释、固定开发团队标识、本机用户名和绝对路径、真实邮箱、凭据、签名媒体链接或私人截图。用户明确选择的公开署名和创作说明可以保留。
-- 临时签名去除个人证书，不会自动去除可执行文件里的构建路径。使用 `scripts/package-preview.sh` 剥离调试/本地符号、重新签名，并扫描最终解包内容。
-- 运行 `node scripts/privacy-check.mjs`、`node scripts/privacy-check.mjs --history main`；对解包目录运行 `node scripts/privacy-check.mjs --artifact <directory>`。扫描通过不是绝对无泄露保证，仍需人工复核；日志不得打印命中的敏感值。
-- 删除当前文件或新增修复提交不能清除旧历史。经用户授权后才能改写历史、强制推送和替换发布附件；使用明确的远程预期值保护强制推送。
-- 改写历史后核查分支、标签、附件与旧提交直接链接。GitHub 缓存、旧 SHA 入口及他人副本可能仍存在；明确报告残留，必要时由 GitHub Support 处理，不声称已经彻底清除。
-
-# 构建与发布
-
-- 区分开发签名、ad-hoc 临时签名、Developer ID 发行签名与公证。临时签名且未公证的包只能明确标为测试版，说明实际架构、Safari 开发测试要求和未验证平台。
-- 本机安全策略可能影响 Gatekeeper 检查结果；本机能打开、构建成功或签名完整性通过，不代表其他 Mac 可安装或 Safari 可加载。不得为验证擅自关闭系统安全保护。
-- 发布包附安装说明、许可证、源码提交标识和 SHA-256 校验值。检查 DMG 挂载、ZIP 解压、嵌入扩展签名及包内资源与源码的一致性。
-- 上传后重新下载公开附件，核对摘要并扫描解包文件；本地检查不能替代对实际下载包的验证。
-- 更新 README、安装说明、更新日志和 Release 描述，区分源码版本、测试包与正式发行版。替换同版本附件时明确提示重新下载，并更新校验文件。
-- 验证按风险选择：静态检查、后台测试、Xcode 构建、导出检查和真实 Safari 验证各有边界。报告实际完成项与限制，不把 CI 成功当作运行时或视觉效果已验证。
+- Maintained source: `Smart Video Viewer/`. Design sources and approved icon masters: `design/`.
+- Use Git commits for source history and rollback. Do not create additional local backup copies, `.backup` files, or versioned backup directories unless the user explicitly requests them.
+- Existing local originals, build outputs, release packages, and backups are ignored by Git. Do not delete them without explicit approval.
+- Keep generated build/release artifacts and machine-specific Xcode state out of commits.
+- For icon exports, follow `design/focus-optical-2026-10-06/approved-raster/README.md` and inspect every exported size. A correct SVG or large preview does not verify small PNG exports.
