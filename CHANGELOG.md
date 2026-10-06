@@ -1,0 +1,33 @@
+# 更新日志 / Changelog
+
+依据现有源码与本地版本记录整理。这里的历史版本号不代表存在对应 Git 标签或 GitHub Release。
+Compiled from source and local version records. Historical version numbers do not imply Git tags or GitHub Releases exist.
+
+## Unreleased
+
+- 中英文 README、贡献/隐私/安全说明、问题和 PR 模板、开发与发布指南、本地自动检查及待启用的 CI 模板。
+- Bilingual READMEs, contributor/privacy/security documentation, issue/PR templates, development/release guides, local automated checks and a pending CI template.
+
+## 2.0.6 — 2026-10-06
+
+- 修复工具栏小尺寸 PNG 重复、截断的导出问题；所有尺寸由已验证母版生成。
+- Fix duplicated and clipped small toolbar PNG exports; derive all sizes from verified masters.
+
+## 2.0.5 — 2026-10-06
+
+- 采用确认的轻度光学校正稿；该版本小尺寸导出缺陷随后由 2.0.6 修复。
+- Adopt the approved mild optical correction; small raster export defects were subsequently fixed in 2.0.6.
+
+## 2.0.4 — 2026-10-06
+
+- 引入“聚焦”图标 / Introduce the Focus icon.
+
+## 2.0.3 — 2026-10-06
+
+- 画面水平与垂直居中；点击画面外留白退出，控制台显隐不改变布局。
+- Center the picture on both axes; exit on backdrop clicks; console visibility does not shift the picture.
+
+## 2.0.0–2.0.2
+
+- 网页独立观影、连续倍速、可配置跳转、控制台自动隐藏及玻璃风格；保留并修正 IINA 打开路径。
+- In-page viewing, continuous rate control, configurable seeking, auto-hiding glass-style controls, and retained/fixed IINA launching.
