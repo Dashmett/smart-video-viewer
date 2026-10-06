@@ -22,7 +22,9 @@
 
 ## 获取与构建
 
-仓库目前只发布源码，**没有 GitHub Release 安装包或 App Store 下载入口**。本机开发签名产物不是面向其他用户的已公证发行版。
+现提供 [v2.0.6 测试版 DMG / ZIP](https://github.com/Dashmett/smart-video-viewer/releases/tag/v2.0.6)，仅支持 **Apple Silicon**。这是临时签名、未公证的开发测试包，需要 Safari 开发测试配置，不能保证下载即用；详见[安装说明](docs/INSTALL.md)。尚无 Developer ID 正式发行包或 App Store 版本。
+
+也可以按以下步骤从源码构建：
 
 需要 macOS、Safari 和 Xcode。工程部署目标为 macOS 12.0，但这不是完整兼容性承诺：目前主要在本机 macOS 27 / Safari 环境验证，更早版本尚未完成实机覆盖。IINA 仅在使用外部播放功能时需要。
 

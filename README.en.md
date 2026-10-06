@@ -22,7 +22,9 @@ The console uses CSS, not native Liquid Glass components. The current interface 
 
 ## Get and build
 
-This repository currently distributes source only. **There are no GitHub Release installers or App Store downloads.** Locally development-signed builds are not notarized distributions for other users.
+A [v2.0.6 preview DMG / ZIP](https://github.com/Dashmett/smart-video-viewer/releases/tag/v2.0.6) is available for **Apple Silicon only**. It is ad-hoc signed and unnotarized, requires Safari development-testing setup, and is not guaranteed to run immediately after download. See the [installation guide](docs/INSTALL.md). No Developer ID distribution build or App Store version is available.
+
+Alternatively, build from source:
 
 You need macOS, Safari and Xcode. The deployment target is macOS 12.0, not a fully tested compatibility guarantee: validation has primarily used the maintainer’s macOS 27 / Safari environment. Older versions have not received full device coverage. IINA is optional unless you use external playback.
 
