@@ -1,12 +1,10 @@
-# 授权状态 / Licensing status
+# 授权与来源 / Licensing and provenance
 
-目前未选择或授予开源许可证，因此没有创建 LICENSE 文件。仓库保持私有；访问权限、上传到 GitHub 或可以查看源码本身不代表获得商用、修改或再分发授权。
-No open-source license has been selected or granted, so no LICENSE file is included. The repository remains private. Access, GitHub hosting or source visibility alone does not grant commercial-use, modification or redistribution rights.
+维护者于 2026-10-06 选择以 [MIT License](../LICENSE) 开源本项目。完整英文许可文本以根目录 LICENSE 为准。
+The maintainer selected the [MIT License](../LICENSE) for this project on 2026-10-06. The full license text is in the root LICENSE file.
 
-代码基于原有本地 Smart Open in IINA 工程继续开发；导入中未发现独立 LICENSE/COPYING 文件。维护者选择许可证前，应确认有权对现有代码与资源授予该许可。选择后需更新本文件、两份 README 和贡献指南，不追溯声称原始代码已采用该许可。
-The code continues an existing local Smart Open in IINA project. No separate LICENSE/COPYING file was found in the import. Before selecting a license, the maintainer should confirm the right to license existing code and assets. Update this file, both READMEs and the contribution guide once decided; do not claim the original import was already licensed that way.
+项目从原有本地 Smart Open in IINA 工程继续开发。本次添加 MIT 许可不声称原始导入在此前已经采用 MIT。Apple、Safari、IINA 及其他第三方名称、商标、软件和网站内容不因本项目的 MIT 许可而被重新授权。
+Development continues from the existing local Smart Open in IINA project. This license addition does not claim that the original import previously used MIT. Apple, Safari, IINA and other third-party names, trademarks, software and website content are not relicensed by this project’s MIT license.
 
-常见选项是 MIT（宽松许可）和 GPL-3.0（分发受其约束的修改版时须遵守相同许可要求）；这里仅列候选，不构成许可授予。
-Common candidates include MIT (permissive) and GPL-3.0 (copyleft obligations for covered distribution). Listing them here does not grant a license.
-
-参考 / Reference: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
+新增贡献应具备合法来源，并保留适用的版权和许可声明；引入第三方代码或资源时，应核实许可兼容性并添加相应声明。
+New contributions must have an authorized provenance and retain applicable copyright and license notices. Check compatibility and add required notices when introducing third-party code or assets.

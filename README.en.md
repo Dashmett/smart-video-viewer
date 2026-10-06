@@ -94,6 +94,11 @@ scripts/                Reproducible static checks
 
 [Contributing](CONTRIBUTING.md) · [Code of conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md) · [Changelog](CHANGELOG.md) · [Release checklist](docs/RELEASING.md)
 
-## Licensing and provenance
+## Credits
 
-No open-source license has been granted yet; repository visibility is not a usage license. Development continues from a local Smart Open in IINA project whose original import contained no separate license. Rights to existing code and assets need confirmation before an open-source grant. See [Licensing status](docs/LICENSING.md).
+**代码由 Codex 和色批驱动力完成。**  
+Code by Codex, powered by horny motivation.
+
+## License
+
+This project is open source under the [MIT License](LICENSE). Use, modification, commercial use and redistribution are permitted with the copyright and permission notice retained. The software is provided as is, without warranty. See [licensing and provenance](docs/LICENSING.md).

@@ -94,6 +94,10 @@ scripts/                可复现的静态检查
 
 [贡献指南](CONTRIBUTING.md) · [行为准则](CODE_OF_CONDUCT.md) · [安全报告](SECURITY.md) · [更新日志](CHANGELOG.md) · [发布检查](docs/RELEASING.md)
 
-## 授权与来源
+## 创作说明
 
-目前未授予开源许可；仓库可见性不等于代码使用授权。项目从本地 Smart Open in IINA 工程继续开发，原始导入未附带独立许可证，公开授权前需确认现有代码与资源的权利来源。详见[授权状态](docs/LICENSING.md)。
+**代码由 Codex 和色批驱动力完成。**
+
+## 许可证
+
+本项目以 [MIT License](LICENSE) 开源。允许使用、修改、商用和再分发，须保留版权与许可声明；软件按原样提供，不作担保。来源与授权范围见[授权说明](docs/LICENSING.md)。

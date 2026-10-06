@@ -9,6 +9,6 @@ There is currently no distributed signed installer. This is a future release che
 4. 确认适合分发的签名与 Apple 当前发行要求；本机开发签名不等于公证或 App Store 审核。 / Verify distribution signing and current Apple requirements; development signing is not notarization or App Store approval.
 5. 在干净测试环境验证安装/更新、权限说明和卸载，记录实际测试的系统版本。 / Verify installation/update, permissions and removal in a clean environment; record tested OS versions.
 6. 仅对确认提交创建 Git tag，按需创建 Release，附变更说明、适用平台、校验值与实际验证限制。 / Tag the verified commit and create a release as needed, with notes, supported platform, checksums and verification limits.
-7. 仓库保持私有，除非用户另行授权公开。源码回退使用 Git；不创建额外本地备份副本。 / Keep the repository private unless publication is authorized. Use Git for source rollback instead of extra local backup copies.
+7. 本仓库按 MIT 公开；发布前检查文件与历史中的凭据和私人数据。源码回退使用 Git；不创建额外本地备份副本。 / This repository is public under MIT; check files and history for credentials and private data before releases. Use Git for source rollback instead of extra local backup copies.
 
 Apple: https://developer.apple.com/documentation/safariservices/distributing-your-safari-web-extension
