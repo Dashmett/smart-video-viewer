@@ -1,0 +1,40 @@
+async (page) => {
+  const results = [];
+  const check = (name, condition) => { if (!condition) throw new Error(name); results.push(name); };
+  await page.goto('http://127.0.0.1:8766/output/playwright/iframe-fixture.html');
+  const frame = page.frames().find(f => f.url().includes('localhost:8766'));
+  await frame.waitForFunction(() => globalThis.smartVideoViewer && document.querySelector('video').readyState >= 2);
+  const before = await page.locator('iframe').evaluate(el => el.style.cssText);
+  await page.evaluate(() => smartVideoViewer.prepare('test-token'));
+  await frame.getByRole('button', { name: '进入观影', exact: true }).click();
+  await page.waitForFunction(() => document.querySelector('iframe').getBoundingClientRect().width === innerWidth);
+  check('cross-origin iframe fills outer viewport', await page.evaluate(() => { const r = document.querySelector('iframe').getBoundingClientRect(); return r.left === 0 && r.top === 0 && r.height === innerHeight; }));
+  await page.screenshot({ path: 'output/playwright/viewer-iframe.png' });
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => document.querySelector('iframe').style.position !== 'fixed');
+  check('parent iframe style restores exactly', before === await page.locator('iframe').evaluate(el => el.style.cssText));
+  check('sticky transformed ancestor restored', await page.evaluate(() => document.querySelector('#wrapper').style.position === 'sticky' && document.querySelector('#wrapper').style.transform === 'translateZ(0px)'));
+  await frame.getByRole('button', { name: '进入观影', exact: true }).click();
+  await page.waitForFunction(() => document.querySelector('iframe').style.position === 'fixed');
+  await page.locator('iframe').evaluate(el => el.remove());
+  await page.waitForFunction(() => document.querySelector('#wrapper').style.position === 'sticky');
+  check('removed iframe restores parent page automatically', true);
+  await page.goto('http://127.0.0.1:8766/output/playwright/fixture.html');
+  await page.evaluate(async () => {
+    const v = document.querySelector('video');
+    const blob = await (await fetch(v.src)).blob();
+    v.src = URL.createObjectURL(blob);
+    await new Promise(resolve => v.addEventListener('loadeddata', resolve, {once:true}));
+    v.currentTime = 15;
+    window.blobVideo = v; window.blobURL = v.src;
+  });
+  await page.getByRole('button', { name: '进入观影', exact: true }).click();
+  check('blob video preserves media element and time', await page.evaluate(() => document.querySelector('video') === blobVideo && blobVideo.src === blobURL && Math.abs(blobVideo.currentTime - 15) < .1));
+  await page.getByRole('button', { name: '播放', exact: true }).click();
+  await page.waitForFunction(() => document.querySelector('video').currentTime > 15.2);
+  check('actual blob playback advances inside viewer', true);
+  await page.getByRole('button', { name: '暂停', exact: true }).click();
+  await page.keyboard.press('Escape');
+  check('blob source still usable after exit', await page.evaluate(() => blobVideo.isConnected && blobVideo.src === blobURL && blobVideo.currentTime > 15.2));
+  return { passed: results.length, results };
+}

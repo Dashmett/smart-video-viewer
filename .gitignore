@@ -1,0 +1,21 @@
+# Generated build, release and browser artifacts
+/output/
+/release/
+/.playwright-cli/
+
+# Original import retained locally; maintained source is Smart Video Viewer
+/Smart Open in IINA/
+/Smart-Open-in-IINA-v13.zip
+
+# Machine-specific Xcode and macOS state
+.DS_Store
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.p12
+*.mobileprovision
