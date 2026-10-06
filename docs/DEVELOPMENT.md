@@ -35,10 +35,10 @@ For compile-only checks, append `CODE_SIGNING_ALLOWED=NO`. An unsigned build doe
 `tests/*-checks.js` 为既有浏览器驱动函数，依赖特定 HTML、媒体素材和消息模拟；这些本地 fixture 未全部入库，不能当作独立 CLI 测试运行，暂未纳入 CI。`tests/serve.mjs` 仅提供 127.0.0.1:8766 测试服务器，不会自动生成 fixture。
 The existing `tests/*-checks.js` files are browser-driver functions requiring specific HTML, media and message mocks. Those local fixtures are not fully tracked, so the functions are not standalone CLI tests and are not included in CI. `tests/serve.mjs` only serves local fixtures on 127.0.0.1:8766; it does not generate them.
 
-## GitHub Actions 待启用 / Pending CI activation
+## GitHub Actions CI
 
-配置已保存在 [checks.yml.example](ci/checks.yml.example)。当前 OAuth 连接缺少 workflow 写入权限，因此没有将其放入 `.github/workflows/`，GitHub 不会执行这个模板。
-The configuration is stored in [checks.yml.example](ci/checks.yml.example). The current OAuth connection cannot write workflows, so the template is not installed under `.github/workflows/` and GitHub will not run it.
+配置位于 [checks.yml](../.github/workflows/checks.yml)，推送 main 或创建/更新 PR 时自动运行。也可以进入 [Actions](https://github.com/Dashmett/smart-video-viewer/actions) → Checks → Run workflow 手动运行。点击运行记录查看步骤日志；绿色表示通过，红色表示失败。
+The configuration is in [checks.yml](../.github/workflows/checks.yml). It runs on pushes to main and pull requests. To run it manually, open [Actions](https://github.com/Dashmett/smart-video-viewer/actions) → Checks → Run workflow. Open a run for step logs; green means success and red means failure.
 
-维护者使用具备对应权限的认证方式后，将模板复制到 `.github/workflows/checks.yml`，提交并推送，再确认首次运行成功。是否扩大现有认证权限须单独确认；无需改仓库可见性或开放更多网站权限。
-After the maintainer has appropriately authorized workflow access, copy the template to `.github/workflows/checks.yml`, commit and push, and verify the first run. Expanding current authentication permissions needs separate confirmation; changing repository visibility or extension website permissions is unnecessary.
+CI 使用临时 Ubuntu 环境和 Node.js 22，仅需要仓库内容读取权限，不需要 Apple 签名证书或项目 Secrets。它执行静态检查和后台回归，不构建 macOS App，也不验证真实 Safari 播放或图标视觉效果。
+CI uses an ephemeral Ubuntu runner and Node.js 22 with read-only repository permissions. No Apple signing certificates or project secrets are needed. It checks source/assets and background regressions, not macOS builds, actual Safari playback or visual icon quality.

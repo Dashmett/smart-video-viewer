@@ -7,8 +7,8 @@ Compiled from source and local version records. Historical version numbers do no
 
 - MIT 开源，补充中英文创作说明。 / Open source under MIT, with bilingual creation credits.
 
-- 中英文 README、贡献/隐私/安全说明、问题和 PR 模板、开发与发布指南、本地自动检查及待启用的 CI 模板。
-- Bilingual READMEs, contributor/privacy/security documentation, issue/PR templates, development/release guides, local automated checks and a pending CI template.
+- 中英文 README、贡献/隐私/安全说明、问题和 PR 模板、开发与发布指南、本地自动检查及已启用的 GitHub Actions CI。
+- Bilingual READMEs, contributor/privacy/security documentation, issue/PR templates, development/release guides, local automated checks and enabled GitHub Actions CI.
 
 ## 2.0.6 — 2026-10-06
 

@@ -81,7 +81,7 @@ node scripts/check.mjs
 node --test "Smart Video Viewer/tests/background.test.mjs"
 ```
 
-A [GitHub Actions template](docs/ci/checks.yml.example) is prepared, but **CI is not enabled** because the current GitHub connection lacks workflow write permission. Local checks cover script syntax, resource references, version consistency and background regressions. **They do not replace real Safari end-to-end verification.** See [Development](docs/DEVELOPMENT.md) for builds and manual checks.
+[GitHub Actions](.github/workflows/checks.yml) runs on pushes to main and pull requests, and can be triggered manually under Actions → Checks → Run workflow. The checks cover script syntax, resource references, version consistency and background regressions. **They do not replace real Safari end-to-end verification.** See [Development](docs/DEVELOPMENT.md) for builds and manual checks.
 
 ## Repository layout
 

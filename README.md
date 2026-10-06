@@ -81,7 +81,7 @@ node scripts/check.mjs
 node --test "Smart Video Viewer/tests/background.test.mjs"
 ```
 
-已准备 [GitHub Actions 模板](docs/ci/checks.yml.example)，但当前 GitHub 连接缺少 workflow 写入权限，**CI 尚未启用**。本地运行这两项检查可覆盖脚本语法、资源引用、版本一致性与后台回归，**不等同于 Safari 实机端到端验证**。Xcode 构建与手动测试见[开发指南](docs/DEVELOPMENT.md)。
+[GitHub Actions](.github/workflows/checks.yml) 会在推送到 main、创建或更新 PR 时自动运行，也可在仓库 Actions → Checks → Run workflow 手动触发。这两项检查覆盖脚本语法、资源引用、版本一致性与后台回归，**不等同于 Safari 实机端到端验证**。Xcode 构建与手动测试见[开发指南](docs/DEVELOPMENT.md)。
 
 ## 项目结构
 
