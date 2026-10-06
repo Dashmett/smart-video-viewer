@@ -5,6 +5,8 @@ Compiled from source and local version records. Historical version numbers do no
 
 ## Unreleased
 
+- 清理源码个人标识与发布包构建路径；增加 CI 和打包隐私检查。 / Remove personal source identifiers and build paths from release binaries; add CI and packaging privacy checks.
+
 - MIT 开源，补充中英文创作说明。 / Open source under MIT, with bilingual creation credits.
 
 - 中英文 README、贡献/隐私/安全说明、问题和 PR 模板、开发与发布指南、本地自动检查及已启用的 GitHub Actions CI。

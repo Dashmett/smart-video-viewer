@@ -80,6 +80,7 @@ Node.js 22 或更新版本可运行无需第三方依赖的检查：
 
 ```sh
 node scripts/check.mjs
+node scripts/privacy-check.mjs
 node --test "Smart Video Viewer/tests/background.test.mjs"
 ```
 

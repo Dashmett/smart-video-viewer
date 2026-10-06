@@ -80,6 +80,7 @@ Run the dependency-free checks with Node.js 22 or later:
 
 ```sh
 node scripts/check.mjs
+node scripts/privacy-check.mjs
 node --test "Smart Video Viewer/tests/background.test.mjs"
 ```
 

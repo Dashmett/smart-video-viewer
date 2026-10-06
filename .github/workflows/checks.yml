@@ -17,5 +17,7 @@ jobs:
           node-version: '22'
       - name: Validate source and packaged resources
         run: node scripts/check.mjs
+      - name: Check tracked files for privacy leaks
+        run: node scripts/privacy-check.mjs
       - name: Run background regression tests
         run: node --test "Smart Video Viewer/tests/background.test.mjs"

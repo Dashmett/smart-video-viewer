@@ -7,6 +7,7 @@ From the repository root, use Node.js 22+; no npm dependencies are required.
 
 ```sh
 node scripts/check.mjs
+node scripts/privacy-check.mjs
 node --test "Smart Video Viewer/tests/background.test.mjs"
 ```
 
